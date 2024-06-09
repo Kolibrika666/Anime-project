@@ -1,17 +1,14 @@
-body {
+*{
   margin: 0;
   box-sizing: border-box;
-  background-color: rgb(88, 87, 87);
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 30px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
   
 }
 
-.content {
-  max-width: 1000px;
+body {
+  background-color: rgb(88, 87, 87);
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  text-align: center;
 }
 
 a {
@@ -19,6 +16,20 @@ a {
   text-decoration: inherit;
   cursor: pointer;
 }
+
+
+/* 
+#root {
+  height: 100vh;
+  background-color: blueviolet;
+  display: grid;
+  justify-content: center;
+  
+
+}
+
+
+ */
 
 
 /* :root {

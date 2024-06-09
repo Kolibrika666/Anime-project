@@ -1,0 +1,13 @@
+.laout{
+    height: 100vh;
+    background-color: white;
+    display: grid;
+    justify-content: center;
+    align-content: space-between;
+}
+
+.laout *{
+
+    width: 100vw;
+}
+
