@@ -1,16 +1,19 @@
 import React from 'react';
-import Header from './Header/Header';
 import Footer from './Footer/Footer';
-import Main from './Main/Main';
 import s from './Laout.module.scss'
+import { Outlet } from 'react-router-dom';
+import Header from './Header/Header';
 
 function Laout() {
     return (
         <div className={s.laout}>
             <Header/>
-            <Main/>
+            <Outlet/>
             <Footer/>
         </div>
+
+
+
     );
 }
 
