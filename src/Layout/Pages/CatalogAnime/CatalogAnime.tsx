@@ -1,29 +1,27 @@
+
 import React, { useEffect, useState } from 'react';
-import { getAnime } from '../../../api/catalogAnimeApi';
-import s from './catalogAnime.module.scss'
+import { AnimeCardTypes, getAnimeCard } from '../../../api/catalogAnimeApi';
+
 
 function CatalogAnime() {
-    const [anime, setAnime] = useState([])
-    const getAnimeCard = async() => {
-        try {
-            const data = await getAnime()
-            console.log(data)
-setAnime(data)
 
-        } catch(error) {
-            console.error(error.message)
-        }
+    const [card, setCard] = useState<AnimeCardTypes[]>([])
 
+    const getAnimeCardList = async () => {
+        const data = await getAnimeCard()
+        setCard(data)
     }
-useEffect(() => {
-    getAnimeCard()
-}, []) 
 
+    useEffect(() => {
+        getAnimeCardList()
+    }, [])
+    
     return (
-        <div className={s.catalog}>
-            rye5ur6
+        <div>
+
         </div>
     );
 }
 
 export default CatalogAnime;
+ 
