@@ -11,9 +11,6 @@ function Laout() {
             <Outlet/>
             <Footer/>
         </div>
-
-
-
     );
 }
 
