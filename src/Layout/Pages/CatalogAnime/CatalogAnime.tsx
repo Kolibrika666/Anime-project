@@ -1,32 +1,38 @@
 
-import React, { useEffect, useState } from 'react';
-import { AnimeCardTypes, getAnimeCard } from '../../../api/catalogAnimeApi';
-import AnimeCard from './AnimeCard';
+import React, { useCallback, useEffect, useState } from 'react';
+import { getAnimeData } from '../../../api/catalogAnimeApi';
 import s from './catalogAnime.module.scss'
+import { useAppDispatch, useAppSelector } from '../../../store';
+import { setCatalogAnime } from '../../../store/animeCatalog/animeCardSlice';
+import AnimeCard from './AnimeCard';
 
 
 function CatalogAnime() {
 
-    const [card, setCard] = useState<AnimeCardTypes[]>([])
+    // const [card, setCard] = useState<AnimeCardTypes[]>([])
+    const catalogAnime = useAppSelector(store => store.animeCard.catalogAnime)
+    const dispatch = useAppDispatch()
 
-    const getAnimeCardList = async () => {
-        const data = await getAnimeCard()
-        setCard(data)
-    }
+    const getCatalogAnime = useCallback(async () => {
+        const data = await getAnimeData()
+        dispatch(setCatalogAnime(data))
+    }, [dispatch])
 
     useEffect(() => {
-        getAnimeCardList()
-    }, [])
+        getCatalogAnime()
+    }, [getCatalogAnime])
     
     return (
         <div className = {s.catalog}>
-            <AnimeCard/>
-            <AnimeCard/>
-            <AnimeCard/>
 
-            {/* {card.map(item=> (
-                <p key = {item.id}>{item.attributes.canonicalTitle}</p>
-            ))} */}
+             {catalogAnime.map(item=> (
+                <AnimeCard 
+                canonicalTitle = {item.attributes.canonicalTitle}
+                posterImage={item.attributes.posterImage}
+                status={item.attributes.status}
+                averageRating={item.attributes.averageRating}
+                />
+            ))} 
 
         </div>
     );

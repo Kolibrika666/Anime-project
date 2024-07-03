@@ -27,7 +27,7 @@ export type AnimePosterImageTypes = {
   original: string;
 }
 
-export const getAnimeCard = async() => {
+export const getAnimeData = async() => {
   const responce = await fetch ('https://kitsu.io/api/edge/anime')
   if (responce.status === 200) {
     const data: DataTypes<AnimeCardTypes> = await responce.json();

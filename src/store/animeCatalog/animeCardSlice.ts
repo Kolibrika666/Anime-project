@@ -1,12 +1,12 @@
 import { createSlice , PayloadAction } from "@reduxjs/toolkit";
-import { AnimeAttributesTypes } from "../../api/catalogAnimeApi";
+import {AnimeCardTypes } from "../../api/catalogAnimeApi";
 
 type InitialStateType = {
-    animeCatalog: AnimeAttributesTypes[],
+    catalogAnime: AnimeCardTypes[],
 }
 
 const initialState: InitialStateType = {
-    animeCatalog: [],
+    catalogAnime: [],
 }
 
 
@@ -14,8 +14,8 @@ const animeCardSlice = createSlice({
     name: 'animeCard',
     initialState,
     reducers: {
-        setCatalogAnime(state, action : PayloadAction<AnimeAttributesTypes[]>) {
-            state.animeCatalog = action.payload
+        setCatalogAnime(state, action : PayloadAction<AnimeCardTypes[]>) {
+            state.catalogAnime = action.payload
         }
     }
 })
