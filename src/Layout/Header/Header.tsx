@@ -7,6 +7,7 @@ function Header() {
         <div className={s.header}>
         <NavLink className={({isActive}) => (isActive ? s.yellow : "")} to = '/'>Anime</NavLink>
         <NavLink className={({isActive}) => (isActive ? s.yellow : "")} to = '/Catalog_Anime'>Catalog Anime</NavLink>
+        <NavLink className={({isActive}) => (isActive ? s.yellow : "")} to = '/Random_Anime'>Random anime</NavLink>
 </div>
     );
 }

@@ -3,7 +3,12 @@ https://kitsu.io/api/edge/anime?filter[slug]=cowboy-bebop-tengoku-no-tobira
 
 
 {
-      "id": "1", 
+      ps://kitsu.io/api/edge/anime/1/quotes"
+          }
+        },
+        "episodes": {
+          "links": {
+            "self": "https"id": "1", 
       "type": "anime", 
       "links": {
         "self": "https://kitsu.io/api/edge/anime/1"
@@ -178,12 +183,7 @@ https://kitsu.io/api/edge/anime?filter[slug]=cowboy-bebop-tengoku-no-tobira
         "quotes": {
           "links": {
             "self": "https://kitsu.io/api/edge/anime/1/relationships/quotes",
-            "related": "https://kitsu.io/api/edge/anime/1/quotes"
-          }
-        },
-        "episodes": {
-          "links": {
-            "self": "https://kitsu.io/api/edge/anime/1/relationships/episodes",
+            "related": "htt://kitsu.io/api/edge/anime/1/relationships/episodes",
             "related": "https://kitsu.io/api/edge/anime/1/episodes"
           }
         },
