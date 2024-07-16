@@ -5,6 +5,7 @@ type InitialStateType = {
     catalogAnime: AnimeCardTypes[],
     anime: AnimeCardTypes,
     string: string,
+    id: string,
 }
 
 const initialState: InitialStateType = {
@@ -23,6 +24,7 @@ const initialState: InitialStateType = {
 relationships: {},
     },
     string: "",
+    id: '0',
 }
 
 
@@ -39,10 +41,13 @@ const animeCardSlice = createSlice({
         },
         SetStr(state, action : PayloadAction<string>) {
             state.string = action.payload
+        },
+        SetId(state, action : PayloadAction<string>) {
+            state.id = action.payload
         }
     }
 })
 
-export const { setCatalogAnime, setAnime, SetStr } = animeCardSlice.actions
+export const { setCatalogAnime, setAnime, SetStr, SetId } = animeCardSlice.actions
 
 export default animeCardSlice.reducer

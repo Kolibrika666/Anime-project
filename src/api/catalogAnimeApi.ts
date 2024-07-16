@@ -6,10 +6,10 @@ meta: object;
 
 export type AnimeCardTypes = {
 id: string;
-type: string;
-links: object;
+type?: string;
+links?: object;
 attributes: AnimeAttributesTypes;
-relationships: object;
+relationships?: object;
 }
 
 export type AnimeAttributesTypes = {
@@ -60,4 +60,12 @@ export const getFavoriteAnime = async() => {
   } else throw new Error('some error')
 }
 
+let id = ""
 
+export const getAnimePage= async() => {
+  const responce = await fetch ('https://kitsu.io/api/edge/anime?page[limit]=1&page[offset]=' + id)
+  if (responce.status === 200) {
+    const data: AnimeCardTypes = await responce.json();
+    return data;
+  } else throw new Error('some error')
+}

@@ -26,16 +26,11 @@ const StartPage = () => {
             
                 <h3>Это аниме нравится большинству!</h3>
             
-            <AnimeCard canonicalTitle = {anime.attributes.canonicalTitle}
-            posterImage={anime.attributes.posterImage}
-            status={anime.attributes.status}
-            averageRating={anime.attributes.averageRating}/>
-            <div className={s.block}>
+            <AnimeCard  id = {anime.id}
+                attributes = {anime.attributes}/>
             <h4>Описание</h4>
             <p className={s.synopsis}>{anime.attributes.synopsis}</p>
-            </div>
             </article>
-
         </div>
     );
 };

@@ -26,11 +26,8 @@ function CatalogAnime() {
         <div className = {s.catalog}>
 
          <>   {catalogAnime.map(item=> (
-                <AnimeCard 
-                canonicalTitle = {item.attributes.canonicalTitle}
-                posterImage={item.attributes.posterImage}
-                status={item.attributes.status}
-                averageRating={item.attributes.averageRating}
+                <AnimeCard  id = {item.id}
+                attributes = {item.attributes}
                 />
             ))} </> 
 
