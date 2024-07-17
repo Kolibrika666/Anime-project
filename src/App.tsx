@@ -17,7 +17,7 @@ function App() {
       <Route path = '/' element = {<StartPage/>}/>
       <Route path = 'Catalog_Anime' element = {<CatalogAnime/>}/>
       <Route path = 'Random_Anime' element = {<RandomAnime/>}/>
-      <Route path = 'Animepage' element = {<AnimePage/>}/>
+      <Route path = 'Anime_Page' element = {<AnimePage/>}/>
       </Route>
     </Routes>
     </BrowserRouter>
