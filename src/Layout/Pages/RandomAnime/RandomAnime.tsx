@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+
+import AnimePage from '../AnimePages/AnimePage';
 
 const RandomAnime = () => {
     return (
         <div>
-            bilgbiv
+            <AnimePage/>
         </div>
     );
 };

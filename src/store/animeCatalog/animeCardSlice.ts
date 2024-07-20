@@ -6,6 +6,8 @@ type InitialStateType = {
     anime: AnimeCardTypes,
     string: string,
     animeCheck: AnimeCardTypes,
+    animeList: AnimeCardTypes[],
+    favoriteAnimeList: AnimeCardTypes[],
 }
 
 const initialState: InitialStateType = {
@@ -35,6 +37,8 @@ relationships: {},
     },
 relationships: {},
     } ,
+    animeList: [],
+    favoriteAnimeList: [],
 }
 
 
@@ -54,10 +58,16 @@ const animeCardSlice = createSlice({
         },
         SetAnimeCheck(state, action : PayloadAction<AnimeCardTypes>) {
             state.animeCheck = action.payload
-        }
+        },
+        setSearchAnime(state, action : PayloadAction<AnimeCardTypes[]>) {
+            state.animeList = action.payload
+        },
+        setFavoriteAnime(state, action : PayloadAction<AnimeCardTypes[]>) {
+            state.favoriteAnimeList.push(...action.payload)
+        },
     }
 })
 
-export const { setCatalogAnime, setAnime, SetStr, SetAnimeCheck} = animeCardSlice.actions
+export const { setCatalogAnime, setAnime, SetStr, SetAnimeCheck, setSearchAnime, setFavoriteAnime} = animeCardSlice.actions
 
 export default animeCardSlice.reducer
