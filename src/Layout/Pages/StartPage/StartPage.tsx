@@ -21,16 +21,21 @@ const StartPage = () => {
 
     return (
         <div className={s.start}>
-            <img className={s.banner}  src = 'https://media.kitsu.io/anime/cover_images/50/large.jpg' alt = ""/>
-            <article>
-            
-                <h3>Это аниме нравится большинству!</h3>
-            
-            <AnimeCard  id = {anime.id}
-                attributes = {anime.attributes}/>
-            <h4>Описание</h4>
-            <p className={s.synopsis}>{anime.attributes.synopsis}</p>
-            </article>
+
+        <picture></picture>
+        <article>
+        <h3>Most people like this anime!</h3>
+        <div className={s.flex}>
+         <div className={s.card}><AnimeCard  id = {anime.id}
+            attributes = {anime.attributes}/>
+        </div>
+        <div className={s.synopsis}>
+        <h4>Description</h4>
+        <p>{anime.attributes.synopsis}</p>
+        </div>
+        </div>
+        </article>
+        
         </div>
     );
 };

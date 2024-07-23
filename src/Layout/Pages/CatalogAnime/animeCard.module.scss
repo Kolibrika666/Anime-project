@@ -1,20 +1,56 @@
+
+
 .card {
-    margin-top: 10px;
-    background-color: rgb(222, 222, 222);
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    max-width: 300px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    position: relative;
+    background-color: antiquewhite;
+
+    h3 {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        background-color: rgba(77, 57, 3, 0.881);
+        
+    }
+    p {
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        gap: 10px;
+    }
+    span {
+        background-color: rgba(0, 0, 0, 0.835)
+    }
+
+
 }
 
-.card h3, img {
-    max-width: 300px;
-}
-
-.card p {
-    max-width: 150px;
-}
-
-.card img {
+.posterImg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
     object-fit: cover;
+    z-index: 0;
 }
+
+.like {
+    background-color: rgba(240, 248, 255, 0.849);
+    border-radius: 10px;
+    background-image: url('https://flomaster.top/o/uploads/posts/2024-02/1708603661_flomaster-top-p-simvol-serdechko-instagram-narisovannie-19.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    bottom: 30px;
+    span {
+        background-color: transparent
+    }
+}
+;

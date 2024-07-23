@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './ButtonLikes.module.scss'
+import s from './animeCard.module.scss'
 import { useAppDispatch } from '../../../store';
 import { AnimeCardTypes } from '../../../api/catalogAnimeApi';
 import { setFavoriteAnime } from '../../../store/animeCatalog/animeCardSlice';
@@ -13,9 +13,7 @@ const ButtonLikes = (props: AnimeCardTypes) => {
     }
 
     return (
-        <div >
-            <button className={s.like} onClick={getAnimeList}>like</button>
-        </div>
+            <button className={s.like} onClick={getAnimeList}><span>like</span></button>
     );
 };
 

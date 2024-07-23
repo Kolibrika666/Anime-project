@@ -1,28 +1,47 @@
 
 .start {
-display: grid;
-img {
-    height: 100%;
-    max-width: 100vw;
-    object-fit: cover;
-}
-}
-
-.start article {
-    display: flex;
-    flex-wrap: wrap;
-
-    justify-content: center;
-    img {
-        max-height: 100px;
-    }
-    .block, h4, p{
-        max-width: 300px;
-        max-height: 100px;
-    }
-    .synopsis {
-        max-width: 300px;
-        max-height: 250px;
-       overflow-y: scroll;
-    }
+    background-image: url(https://sotni.ru/wp-content/uploads/2023/08/anime-osen-1.webp
+);
+    display: grid;
+    background-repeat:no-repeat ;
+    background-size: cover;
+        picture {
+            background-image: url(https://papik.pro/uploads/posts/2021-12/thumbs/1640696303_21-papik-pro-p-nadpis-anime-risunok-21.png
+            );
+            background-repeat:no-repeat ;
+            background-size: contain;
+            width: 100%;
+            height: 300px;
+        }
+        article {
+            color: #ffffff;
+            position: absolute;
+            top: 300px;
+            background-color: rgba(19, 6, 84, 0.749);
+            max-height: 400px;
+            width: 100vw;
+            display: grid;
+            
+            .flex {
+                display: flex;
+                padding: 10px;
+                gap: 5px;
+                overflow: hidden;
+                
+                .card{
+                    height: 350px;
+                    width: 350px;
+                   
+                }
+                .synopsis {
+                    position: relative;
+                    padding: 10px;
+                    text-align: left;
+                    p {
+                        height: 300px;
+                        overflow-y: scroll;
+                    }
+                }
+            }
+        }
 }

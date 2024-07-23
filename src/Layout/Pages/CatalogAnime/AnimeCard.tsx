@@ -19,13 +19,15 @@ const AnimeCard = (props :AnimeCardTypes) => {
 
     return (
         <div key = {props.id} className={s.card}>
+            <NavLink to = '/Anime_Page' key={props.id} onClick={getAnime}><img className={s.posterImg} src={props.attributes.posterImage.medium}/></NavLink>
             <h3>{props.attributes.canonicalTitle}</h3>
+            
+            <p>
+            <span>{props.attributes.status}</span>
+            <span>{props.attributes.averageRating}</span>
+            </p>
             <ButtonLikes id = {props.id}
                 attributes = {props.attributes}/>
-            <NavLink to = '/Anime_Page' key={props.id} onClick={getAnime}><img src={props.attributes.posterImage.medium}/></NavLink>
-            <p>{props.attributes.status}</p>
-            <p>{props.attributes.averageRating}</p>
-            
         </div>
     );
     
