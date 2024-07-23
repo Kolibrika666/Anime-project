@@ -19,8 +19,8 @@ const getRandom = useCallback(async () => {
         <NavLink className={({isActive}) => (isActive ? s.yellow : "")} to = '/'>Anime</NavLink>
         <NavLink className={({isActive}) => (isActive ? s.yellow : "")} to = '/Catalog_Anime'>Catalog Anime</NavLink>
         <NavLink onClick={getRandom} className={({isActive}) => (isActive ? s.yellow : "")} to = '/Random_Anime'>Random anime</NavLink>
-        <NavLink className={({isActive}) => (isActive ? s.yellow : "")} to = '/Search_Page'>Search</NavLink>
         <NavLink className={({isActive}) => (isActive ? s.yellow : "")} to = '/My_Favorite_Anime'>My Favorite Anime</NavLink>
+        <NavLink className={({isActive}) => (isActive ? s.yellow : "")} to = '/Search_Page'>Search</NavLink>
 </div>
     );
 }

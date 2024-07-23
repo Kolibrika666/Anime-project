@@ -59,11 +59,11 @@ const animeCardSlice = createSlice({
         SetAnimeCheck(state, action : PayloadAction<AnimeCardTypes>) {
             state.animeCheck = action.payload
         },
-        setSearchAnime(state, action : PayloadAction<AnimeCardTypes[]>) {
-            state.animeList = action.payload
-        },
         setFavoriteAnime(state, action : PayloadAction<AnimeCardTypes[]>) {
             state.favoriteAnimeList.push(...action.payload)
+        },
+        setSearchAnime(state, action : PayloadAction<AnimeCardTypes[]>) {
+            state.animeList = action.payload
         },
     }
 })

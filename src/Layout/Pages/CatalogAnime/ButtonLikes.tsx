@@ -10,7 +10,6 @@ const ButtonLikes = (props: AnimeCardTypes) => {
     const animeList = [props]
     const getAnimeList = () => {
        dispatch(setFavoriteAnime(animeList))
-        console.log(animeList)
     }
 
     return (

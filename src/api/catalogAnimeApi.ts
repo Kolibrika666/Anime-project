@@ -83,12 +83,12 @@ export const getRandomAnime = async() => {
   } else throw new Error('some error')
 }
 
-let text = ""
-
-export const getAnimeSearch = async() => {
+export const getAnimeSearch = async(e:string) => {
+  let text = e
   const responce = await fetch ('https://kitsu.io/api/edge/anime?filter[text]='+ text)
   if (responce.status === 200) {
     const data: DataTypes<AnimeCardTypes> = await responce.json();
+    console.log(data.data)
     return data.data;
   } else throw new Error('some error')
 }
