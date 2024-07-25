@@ -62,6 +62,7 @@ const animeCardSlice = createSlice({
         setFavoriteAnime(state, action : PayloadAction<AnimeCardTypes[]>) {
             state.favoriteAnimeList.push(...action.payload)
         },
+
         setSearchAnime(state, action : PayloadAction<AnimeCardTypes[]>) {
             state.animeList = action.payload
         },

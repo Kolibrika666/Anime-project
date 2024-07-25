@@ -13,7 +13,6 @@ const AnimeCard = (props :AnimeCardTypes) => {
 
     const getAnime = () => {
         dispatch(SetAnimeCheck(props))
-        console.log(anime)
     } 
 
     let raiting: number = Math.floor(Number(props.attributes.averageRating)) / 10
