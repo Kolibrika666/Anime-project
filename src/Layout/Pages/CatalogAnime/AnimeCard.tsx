@@ -15,22 +15,23 @@ const AnimeCard = (props :AnimeCardTypes) => {
         dispatch(SetAnimeCheck(props))
         console.log(anime)
     } 
-    
+
+    let raiting: number = Math.floor(Number(props.attributes.averageRating)) / 10
 
     return (
+        
         <div key = {props.id} className={s.card}>
             <NavLink to = '/Anime_Page' key={props.id} onClick={getAnime}><img className={s.posterImg} src={props.attributes.posterImage.medium}/></NavLink>
             <h3>{props.attributes.canonicalTitle}</h3>
-            
             <p>
             <span>{props.attributes.status}</span>
-            <span>{props.attributes.averageRating}</span>
+            < span >{raiting}</span>
             </p>
             <ButtonLikes id = {props.id}
                 attributes = {props.attributes}/>
         </div>
     );
-    
+
 };
 
 export default AnimeCard;

@@ -5,6 +5,7 @@ import { getFavoriteAnime } from '../../../api/catalogAnimeApi';
 import { setAnime, setCatalogAnime } from '../../../store/animeCatalog/animeCardSlice';
 import AnimeCard from '../CatalogAnime/AnimeCard';
 
+
 const StartPage = () => {
 
     const anime = useAppSelector(store => store.animeCard.anime)

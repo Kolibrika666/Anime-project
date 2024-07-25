@@ -24,12 +24,13 @@ function CatalogAnime() {
     
     return (
         <div className = {s.catalog}>
-
-         <>   {catalogAnime.map(item=> (
+           {catalogAnime.map(item=> (
+            <article>
                 <AnimeCard  id = {item.id}
                 attributes = {item.attributes}
                 />
-            ))} </> 
+            </article>
+            ))} 
 
         <ButtonBefore/>
 

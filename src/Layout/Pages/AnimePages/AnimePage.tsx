@@ -13,19 +13,22 @@ const AnimePage = () => {
 
     return (
         <div className = {s.animePage}>
-            <h1>{anime.attributes.canonicalTitle}</h1>
-
+             <h1>{anime.attributes.canonicalTitle}</h1>
+             <div>
+            <picture>
             <img src={anime.attributes.posterImage.medium}/>
-
-           <p> Status: {anime.attributes.status}</p>
-            <p>AverageRating: {anime.attributes.averageRating}</p>
-            <p>StartDate: {anime.attributes.startDate}</p>
-            <p>EndDate: {anime.attributes.endDate}</p>
-            <p>EpisodeCount: {anime.attributes.episodeCount}</p>
-            <p>Synopsis: {anime.attributes.synopsis}</p>
-
+            </picture>
+            <article>
+            <p><b> Status: </b>{anime.attributes.status}</p>
+            <p><b>AverageRating:</b> {anime.attributes.averageRating}</p>
+            <p><b>StartDate:</b> {anime.attributes.startDate}</p>
+            <p><b>EndDate:</b> {anime.attributes.endDate}</p>
+            <p><b>EpisodeCount:</b> {anime.attributes.episodeCount}</p>
+            <p><b>Synopsis:</b> {anime.attributes.synopsis}</p>
             <button><span><NavLink className={({isActive}) => (isActive ? s.yellow : "")} to = '/Catalog_Anime'>Catalog Anime</NavLink></span></button>
-            
+            </article>
+            </div>
+
         </div>
     );
 };

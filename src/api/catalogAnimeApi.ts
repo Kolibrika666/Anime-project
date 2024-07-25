@@ -17,7 +17,7 @@ relationships?: object;
 
 export type AnimeAttributesTypes = {
   canonicalTitle: string;
-  averageRating: string;
+  averageRating: string | number;
   status: string;
   posterImage: AnimePosterImageTypes;
   synopsis?: "";

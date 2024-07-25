@@ -1,3 +1,42 @@
 .animePage {
-    background-color: rgb(56, 77, 70);
+    background-image: url('https://kartinki.pics/uploads/posts/2021-07/1627135437_5-kartinkin-com-p-anime-piksel-fon-anime-krasivo-7.png');
+    background-size: cover;
+    position: relative;
+    padding: 10px;
+    height: 100%;
+
+    * {
+        width: 100%;
+    }
+
+    picture {
+        height: 100%;
+    }
+
+    img {
+        max-height: 70vh;
+        object-fit: contain;
+      
+    }
+
+    div {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        
+    }
+
+    article {
+        max-height: 70vh;
+        padding: 10px;
+        background-color: rgba(122, 113, 158, 0.864);
+        overflow-y: scroll;
+        display: grid;
+        align-content: space-around;
+
+        p {
+            text-align: left;
+        }
+
+    }
+
 }

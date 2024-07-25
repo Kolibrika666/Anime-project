@@ -4,7 +4,7 @@ import { getAnimeSearch } from '../../../api/catalogAnimeApi';
 import { useAppDispatch, useAppSelector } from '../../../store';
 import { setSearchAnime } from '../../../store/animeCatalog/animeCardSlice';
 import AnimeCard from '../CatalogAnime/AnimeCard';
-
+import st from '../CatalogAnime/catalogAnime.module.scss'
 
 const Search = () => {
 
@@ -34,13 +34,16 @@ const Search = () => {
                     getAnime(e.target.value)
                 }
                 }></input>
-                <button type='submit'>search</button>
+                <button type='submit'><span>search</span></button>
             </form>
-        <>   {searchAnime.map(item=> (
+        <div className={st.catalog}>
+            {searchAnime.map(item=> (
+                <article>
                <AnimeCard  id = {item.id}
                attributes = {item.attributes}
                />
-           ))} </> 
+               </article>
+           ))} </div> 
            </div>
     );
 };

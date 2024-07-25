@@ -1,7 +1,22 @@
 .catalog{
+   background-image: url(
+        https://catherineasquithgallery.com/uploads/posts/2023-01/1674351397_catherineasquithgallery-com-p-fon-sero-fioletovii-foto-1.jpg
+    );
+    background-size: cover;
    display: flex;
    flex-wrap: wrap;
    gap: 10px;
-   overflow:scroll;
+   overflow-y:scroll;
+   overflow-x: hidden;
    justify-content: center;
+   padding: 10px;
+
+   article {
+      color: white;
+      position: relative;
+      background-color: rgba(255, 255, 255, 0.162);
+      max-width: 300px;
+      height: 420px;
+      
+   }
 }

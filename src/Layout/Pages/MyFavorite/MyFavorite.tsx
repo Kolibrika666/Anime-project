@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './MyFavorite.module.scss'
+import s from '../CatalogAnime/catalogAnime.module.scss'
 import { useAppSelector } from '../../../store';
 import AnimeCard from '../CatalogAnime/AnimeCard';
 
@@ -9,12 +9,14 @@ const MyFavorite = () => {
 
 
     return (
-        <div className={s.favorite}>
-             <>   {animeList.map(item=> (
+        <div className={s.catalog}>
+              {animeList.map(item=> (
+                 <article> 
                 <AnimeCard  id = {item.id}
                 attributes = {item.attributes}
                 />
-            ))} </> 
+                </article> 
+            ))} 
 
         </div>
     );
