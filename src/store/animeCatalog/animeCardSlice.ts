@@ -8,6 +8,7 @@ type InitialStateType = {
     animeCheck: AnimeCardTypes,
     animeList: AnimeCardTypes[],
     favoriteAnimeList: AnimeCardTypes[],
+    like: number,
 }
 
 const initialState: InitialStateType = {
@@ -21,6 +22,8 @@ const initialState: InitialStateType = {
         averageRating: "",
         status: "",
         posterImage: {},
+        startDate: "",
+        endDate: "",
     },
 relationships: {},
     },
@@ -32,6 +35,8 @@ relationships: {},
     attributes: {
         canonicalTitle:"",
         averageRating: "",
+        startDate: "",
+        endDate: "",
         status: "",
         posterImage: {},
     },
@@ -39,6 +44,7 @@ relationships: {},
     } ,
     animeList: [],
     favoriteAnimeList: [],
+    like: 0,
 }
 
 
@@ -62,13 +68,16 @@ const animeCardSlice = createSlice({
         setFavoriteAnime(state, action : PayloadAction<AnimeCardTypes[]>) {
             state.favoriteAnimeList.push(...action.payload)
         },
-
         setSearchAnime(state, action : PayloadAction<AnimeCardTypes[]>) {
             state.animeList = action.payload
         },
+        setLikes(state, action : PayloadAction<number>) {
+            state.like = action.payload 
+        }
+
     }
 })
 
-export const { setCatalogAnime, setAnime, SetStr, SetAnimeCheck, setSearchAnime, setFavoriteAnime} = animeCardSlice.actions
+export const { setCatalogAnime, setAnime, SetStr, SetAnimeCheck, setSearchAnime, setFavoriteAnime, setLikes} = animeCardSlice.actions
 
 export default animeCardSlice.reducer

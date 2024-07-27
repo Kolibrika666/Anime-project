@@ -12,7 +12,7 @@ const AnimeCard = (props :AnimeCardTypes) => {
 
     const dispatch = useAppDispatch()
     const anime = useAppSelector(store => store.animeCard.animeCheck)
-   
+    
 
     const getAnime = () => {
         dispatch(SetAnimeCheck(props))
@@ -31,6 +31,8 @@ const AnimeCard = (props :AnimeCardTypes) => {
             </p>
             <ButtonLikes id = {props.id}
                 attributes = {props.attributes}/>
+
+            
         </div>
     );
 

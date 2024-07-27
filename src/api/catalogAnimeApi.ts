@@ -1,5 +1,3 @@
-import { useAppSelector } from "../store";
-
 
 export type DataTypes<T> = {
 data: T[];
@@ -13,6 +11,7 @@ type?: string;
 links?: object;
 attributes: AnimeAttributesTypes;
 relationships?: object;
+like?: number;
 }
 
 export type AnimeAttributesTypes = {
@@ -47,7 +46,7 @@ export const getAnimeData = async() => {
 
 let n = 12
 
-export const getAnimeDataBefore = async() => {
+export const getAnimeDataAfter = async() => {
   const responce = await fetch ('https://kitsu.io/api/edge/anime?page[limit]=12&page[offset]=' + n)
   if (responce.status === 200) {
     const data: DataTypes<AnimeCardTypes> = await responce.json();
@@ -55,8 +54,17 @@ export const getAnimeDataBefore = async() => {
     return data.data;
   } else throw new Error('some error')
 
-  
 }
+
+// export const getAnimeDataBefore= async(n:number) => {
+//   const responce = await fetch ('https://kitsu.io/api/edge/anime?page[limit]=12&page[offset]=' + n)
+//   if (responce.status === 200) {
+//     const data: DataTypes<AnimeCardTypes> = await responce.json();
+//     n-=12
+//     return data.data;
+//   } else throw new Error('some error')
+
+// }
 
 export const getFavoriteAnime = async() => {
   const responce = await fetch ('https://kitsu.io/api/edge/anime?sort=-favoritesCount')
