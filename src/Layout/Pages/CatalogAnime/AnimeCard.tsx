@@ -6,16 +6,19 @@ import { useAppDispatch, useAppSelector} from '../../../store';
 import { SetAnimeCheck} from '../../../store/animeCatalog/animeCardSlice';
 import ButtonLikes from './ButtonLikes';
 
+export const raiting = (averageRating:string | number) => Math.floor(Number(averageRating)) / 10
+
 const AnimeCard = (props :AnimeCardTypes) => {
 
     const dispatch = useAppDispatch()
     const anime = useAppSelector(store => store.animeCard.animeCheck)
+   
 
     const getAnime = () => {
         dispatch(SetAnimeCheck(props))
     } 
 
-    let raiting: number = Math.floor(Number(props.attributes.averageRating)) / 10
+   
 
     return (
         
@@ -24,7 +27,7 @@ const AnimeCard = (props :AnimeCardTypes) => {
             <h3>{props.attributes.canonicalTitle}</h3>
             <p>
             <span>{props.attributes.status}</span>
-            < span >{raiting}</span>
+            < span >{raiting(props.attributes.averageRating)}</span>
             </p>
             <ButtonLikes id = {props.id}
                 attributes = {props.attributes}/>

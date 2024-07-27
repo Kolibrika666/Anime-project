@@ -20,10 +20,10 @@ export type AnimeAttributesTypes = {
   averageRating: string | number;
   status: string;
   posterImage: AnimePosterImageTypes;
-  synopsis?: "";
-  startDate?: "";
-  endDate?: "";
-  episodeCount?: "";
+  synopsis?: string;
+  startDate: string;
+  endDate: string;
+  episodeCount?: string;
 }
 
 export type AnimePosterImageTypes = {
