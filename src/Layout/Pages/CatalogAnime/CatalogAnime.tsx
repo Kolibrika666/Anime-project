@@ -5,7 +5,6 @@ import s from './catalogAnime.module.scss'
 import { useAppDispatch, useAppSelector } from '../../../store';
 import { setCatalogAnime } from '../../../store/animeCatalog/animeCardSlice';
 import AnimeCard from './AnimeCard';
-import ButtonBefore from './ButtonBefore';
 import { useInView } from 'react-intersection-observer';
 
 

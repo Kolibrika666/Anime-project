@@ -18,6 +18,12 @@ const AnimeCard = (props :AnimeCardTypes) => {
         dispatch(SetAnimeCheck(props))
     } 
 
+    const checkStyleRaiting = (raiting: number) => {
+      if (raiting >= 80) return  {backgroundColor: 'orange'}
+      else if (raiting >= 60) return  {backgroundColor: 'green'}
+      else return  {backgroundColor: 'blue'}
+    }
+
    
 
     return (
@@ -27,7 +33,7 @@ const AnimeCard = (props :AnimeCardTypes) => {
             <h3>{props.attributes.canonicalTitle}</h3>
             <p>
             <span>{props.attributes.status}</span>
-            < span >{raiting(props.attributes.averageRating)}</span>
+            < span style={ checkStyleRaiting(Number(props.attributes.averageRating))}>{raiting(props.attributes.averageRating)}</span>
             </p>
             <ButtonLikes id = {props.id}
                 attributes = {props.attributes}/>
