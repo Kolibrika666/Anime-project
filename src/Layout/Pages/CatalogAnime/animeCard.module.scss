@@ -39,16 +39,16 @@
 }
 
 .like {
-    background-color: rgba(240, 248, 255, 0.849);
-    border-radius: 10px;
-    background-image: url('https://flomaster.top/o/uploads/posts/2024-02/1708603661_flomaster-top-p-simvol-serdechko-instagram-narisovannie-19.png');
-    background-size: contain;
+    color: transparent;
+    border-radius: 5px;
+    background-size: cover;
     background-repeat: no-repeat;
     width: 50px;
+    height: 50px;
     position: absolute;
     z-index: 3;
     right: 0;
-    bottom: 30px;
+    bottom: 29px;
     -moz-box-shadow:0 0 10px #000;
     -webkit-box-shadow:0 0 10px #000;
     box-shadow:0 0 10px #000;
@@ -57,3 +57,9 @@
     }
 }
 ;
+.noActivLike {
+    @extend .like;
+    background-image: url('https://cdn-0.emojis.wiki/emoji-pics/google/heart-decoration-google.png');}
+.activLike {
+    @extend .like;
+    background-image: url('https://i0.wp.com/w7.pngwing.com/pngs/737/284/png-transparent-emoji-heart-sticker-purple-love-emoji-love-purple-violet.png?ssl=1');}

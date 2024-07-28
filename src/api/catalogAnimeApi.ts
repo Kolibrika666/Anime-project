@@ -11,7 +11,7 @@ type?: string;
 links?: object;
 attributes: AnimeAttributesTypes;
 relationships?: object;
-like?: number;
+like: number;
 }
 
 export type AnimeAttributesTypes = {
@@ -39,6 +39,7 @@ export const getAnimeData = async() => {
   const responce = await fetch ('https://kitsu.io/api/edge/anime?page[limit]=12&page[offset]=0')
   if (responce.status === 200) {
     const data: DataTypes<AnimeCardTypes> = await responce.json();
+    data.data.map(item => item.like = 0)
     return data.data;
   } else throw new Error('some error')
 
@@ -51,6 +52,7 @@ export const getAnimeDataAfter = async() => {
   if (responce.status === 200) {
     const data: DataTypes<AnimeCardTypes> = await responce.json();
     n+=12
+    data.data.map(item => item.like = 0)
     return data.data;
   } else throw new Error('some error')
 
@@ -62,6 +64,7 @@ export const getAnimeDataAfter = async() => {
 //     const data: DataTypes<AnimeCardTypes> = await responce.json();
 //     n-=12
 //     return data.data;
+//    data.data.map(item => item.like = 0)
 //   } else throw new Error('some error')
 
 // }
@@ -70,6 +73,7 @@ export const getFavoriteAnime = async() => {
   const responce = await fetch ('https://kitsu.io/api/edge/anime?sort=-favoritesCount')
   if (responce.status === 200) {
     const data: DataTypes<AnimeCardTypes> = await responce.json();
+    data.data.map(item => item.like = 0)
     return data.data[0];
   } else throw new Error('some error')
 }
@@ -87,6 +91,7 @@ export const getRandomAnime = async() => {
   const responce = await fetch ('https://kitsu.io/api/edge/anime?filter[id]='+id)
   if (responce.status === 200) {
     const data: DataTypes<AnimeCardTypes> = await responce.json();
+    data.data.map(item => item.like = 0)
     return data.data[0];
   } else throw new Error('some error')
 }
@@ -96,6 +101,16 @@ export const getAnimeSearch = async(e:string) => {
   const responce = await fetch ('https://kitsu.io/api/edge/anime?filter[text]='+ text)
   if (responce.status === 200) {
     const data: DataTypes<AnimeCardTypes> = await responce.json();
+    return data.data;
+  } else throw new Error('some error')
+}
+
+let id = "3"
+export const getAnimeUsId = async(id:string) => {
+  const responce = await fetch ('https://kitsu.io/api/edge/anime?filter[id]='+id)
+  if (responce.status === 200) {
+    const data: DataTypes<AnimeCardTypes> = await responce.json();
+    data.data.map(item => item.like = 0)
     return data.data;
   } else throw new Error('some error')
 }

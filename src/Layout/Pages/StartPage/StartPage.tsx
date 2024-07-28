@@ -28,7 +28,7 @@ const StartPage = () => {
         <h3>Most people like this anime!</h3>
         <div className={s.flex}>
          <div className={s.card}><AnimeCard  id = {anime.id}
-            attributes = {anime.attributes}/>
+            attributes = {anime.attributes} like={anime.like}/>
         </div>
         <div className={s.synopsis}>
         <h4>Description</h4>

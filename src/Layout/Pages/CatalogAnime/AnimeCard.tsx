@@ -6,14 +6,13 @@ import { useAppDispatch, useAppSelector} from '../../../store';
 import { SetAnimeCheck} from '../../../store/animeCatalog/animeCardSlice';
 import ButtonLikes from './ButtonLikes';
 
-export const raiting = (averageRating:string | number) => Math.floor(Number(averageRating)) / 10
+export const raiting = (averageRating: string | number) => Math.floor(Number(averageRating)) / 10
 
 const AnimeCard = (props :AnimeCardTypes) => {
-
-    const dispatch = useAppDispatch()
-    const anime = useAppSelector(store => store.animeCard.animeCheck)
     
 
+    const dispatch = useAppDispatch()
+   
     const getAnime = () => {
         dispatch(SetAnimeCheck(props))
     } 
@@ -24,19 +23,20 @@ const AnimeCard = (props :AnimeCardTypes) => {
       else return  {backgroundColor: 'blue'}
     }
 
-   
-
+    
+    
+    
     return (
         
-        <div key = {props.id} className={s.card}>
-            <NavLink to = '/Anime_Page' key={props.id} onClick={getAnime}><img className={s.posterImg} src={props.attributes.posterImage.medium}/></NavLink>
+        <div  className={s.card}>
+            <NavLink to = '/Anime_Page' onClick={getAnime}><img className={s.posterImg} src={props.attributes.posterImage.medium}/></NavLink>
             <h3>{props.attributes.canonicalTitle}</h3>
             <p>
             <span>{props.attributes.status}</span>
             < span style={ checkStyleRaiting(Number(props.attributes.averageRating))}>{raiting(props.attributes.averageRating)}</span>
             </p>
             <ButtonLikes id = {props.id}
-                attributes = {props.attributes}/>
+                attributes = {props.attributes} like={props.like}/>
 
             
         </div>

@@ -1,23 +1,31 @@
-import React, { useEffect } from 'react';
+
 import s from '../CatalogAnime/catalogAnime.module.scss'
-import { useAppDispatch, useAppSelector } from '../../../store';
+import { useAppSelector } from '../../../store';
 import AnimeCard from '../CatalogAnime/AnimeCard';
 import { AnimeCardTypes } from '../../../api/catalogAnimeApi';
-import { set } from '../CatalogAnime/ButtonLikes';
 
 
 const MyFavorite = () => {
-   
-    const animeList = useAppSelector(store => store.animeCard.favoriteAnimeList)
+
+    const animeListClean = useAppSelector(store => store.animeCard.favoriteAnimeListClean)
+    let set = new Set()
+    for (let i of animeListClean) {
+        set.add(i.id)
+    }
+    const animeList: AnimeCardTypes[] = []
+    for (let i of set) {
+        animeList.push(animeListClean.find( e => e.id == i))
+    }
     console.log(animeList)
 
     return (
         <div className={s.catalog}>
+
               {
-              Array.from(set).map(item => (
-                <article> 
+              animeList.map(item => (
+                <article > 
                 <AnimeCard  id = {item.id}
-                attributes = {item.attributes}
+                attributes = {item.attributes} like={1}
                 />
                 </article> 
             ))} 

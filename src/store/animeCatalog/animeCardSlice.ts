@@ -8,7 +8,10 @@ type InitialStateType = {
     animeCheck: AnimeCardTypes,
     animeList: AnimeCardTypes[],
     favoriteAnimeList: AnimeCardTypes[],
-    like: number,
+    favoriteAnimeListClean: AnimeCardTypes[],
+    favoriteAnimeSet: AnimeCardTypes[],
+    like: 1 | 0,
+
 }
 
 const initialState: InitialStateType = {
@@ -16,6 +19,7 @@ const initialState: InitialStateType = {
     anime: {
         id: "",
         type: "",
+        like: 0,
     links: {},
     attributes: {
         canonicalTitle:"",
@@ -31,6 +35,7 @@ relationships: {},
     animeCheck: {
         id: "",
         type: "",
+        like: 0,
     links: {},
     attributes: {
         canonicalTitle:"",
@@ -45,6 +50,8 @@ relationships: {},
     animeList: [],
     favoriteAnimeList: [],
     like: 0,
+    favoriteAnimeListClean: [],
+    favoriteAnimeSet: [],
 }
 
 
@@ -68,16 +75,27 @@ const animeCardSlice = createSlice({
         setFavoriteAnime(state, action : PayloadAction<AnimeCardTypes[]>) {
             state.favoriteAnimeList.push(...action.payload)
         },
+        setFavoriteAnimeClean(state, action : PayloadAction<AnimeCardTypes[]>) {
+    
+            state.favoriteAnimeListClean = action.payload
+        },
+
+        setFavoriteAnimeSetClean(state, action : PayloadAction<AnimeCardTypes[]>) {
+
+            state.favoriteAnimeSet = action.payload
+        },
+
         setSearchAnime(state, action : PayloadAction<AnimeCardTypes[]>) {
             state.animeList = action.payload
+            
         },
         setLikes(state, action : PayloadAction<number>) {
-            state.like = action.payload 
+             state.like == 0 ? state.like = 1 : state.like = 0
         }
 
     }
 })
 
-export const { setCatalogAnime, setAnime, SetStr, SetAnimeCheck, setSearchAnime, setFavoriteAnime, setLikes} = animeCardSlice.actions
+export const { setCatalogAnime, setAnime, SetStr, SetAnimeCheck, setSearchAnime, setFavoriteAnime, setFavoriteAnimeClean,setFavoriteAnimeSetClean, setLikes} = animeCardSlice.actions
 
 export default animeCardSlice.reducer
