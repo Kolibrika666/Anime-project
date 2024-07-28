@@ -1,13 +1,14 @@
 import React from 'react';
 import s from './animeCard.module.scss'
-import { useAppDispatch, useAppSelector } from '../../../store';
+import { useAppDispatch } from '../../../store';
 import { AnimeCardTypes } from '../../../api/catalogAnimeApi';
-import { setFavoriteAnime} from '../../../store/animeCatalog/animeCardSlice';
+import { setFavoriteAnime, setLike} from '../../../store/animeCatalog/animeCardSlice';
 
 const ButtonLikes = (props: AnimeCardTypes) => {
     const dispatch = useAppDispatch()
     const getAnimeList = () => {
     dispatch(setFavoriteAnime([props]))
+    // dispatch(setLike(props.like))
     console.log(props.like)
     }
     

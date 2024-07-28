@@ -9,6 +9,7 @@ import AnimeCard from '../CatalogAnime/AnimeCard';
 const StartPage = () => {
 
     const anime = useAppSelector(store => store.animeCard.anime)
+    const likeState = useAppSelector(store => store.animeCard.like)
     const dispatch = useAppDispatch()
     const catalogFavoriteAnime = useAppSelector(store => store.animeCard.favoriteAnimeListClean)
     const getfavoriteAnime = useCallback(async () => {

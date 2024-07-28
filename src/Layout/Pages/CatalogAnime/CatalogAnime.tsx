@@ -11,6 +11,7 @@ function CatalogAnime() {
 
     const catalogAnime = useAppSelector(store => store.animeCard.catalogAnime)
     const catalogFavoriteAnime = useAppSelector(store => store.animeCard.favoriteAnimeListClean)
+    const likeState = useAppSelector(store => store.animeCard.like)
     
     const dispatch = useAppDispatch()
     const getCatalogAnime = useCallback( async () => {
