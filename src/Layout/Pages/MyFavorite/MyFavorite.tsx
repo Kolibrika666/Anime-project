@@ -25,7 +25,7 @@ const MyFavorite = () => {
               animeList.map(item => (
                 <article > 
                 <AnimeCard  id = {item.id}
-                attributes = {item.attributes} like={1}
+                attributes = {item.attributes} like={'1'}
                 />
                 </article> 
             ))} 

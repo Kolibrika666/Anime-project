@@ -1,16 +1,17 @@
 
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect} from 'react';
 import { getAnimeData, getAnimeDataAfter } from '../../../api/catalogAnimeApi';
 import s from './catalogAnime.module.scss'
 import store, { useAppDispatch, useAppSelector } from '../../../store';
-import { setCatalogAnime, setLikes } from '../../../store/animeCatalog/animeCardSlice';
+import { setCatalogAnime } from '../../../store/animeCatalog/animeCardSlice';
 import AnimeCard from './AnimeCard';
 import { useInView } from 'react-intersection-observer';
-
 
 function CatalogAnime() {
 
     const catalogAnime = useAppSelector(store => store.animeCard.catalogAnime)
+    const catalogFavoriteAnime = useAppSelector(store => store.animeCard.favoriteAnimeListClean)
+    
     const dispatch = useAppDispatch()
     const getCatalogAnime = useCallback( async () => {
         const data = await getAnimeData()
@@ -35,8 +36,9 @@ function CatalogAnime() {
                 },
             })
 
-    
-
+    const like = (id: string) => {
+    return catalogFavoriteAnime.find(e  => e.id == id) ? '1' : '0'
+    }
     return (
 
         <div className = {s.catalog} >
@@ -45,8 +47,7 @@ function CatalogAnime() {
             <article key = {item.id}>
                 <AnimeCard  id = {item.id}
                 attributes = {item.attributes}
-                like={item.like}
-                
+                like={like(item.id)}
                 />
             </article>
             ))} 

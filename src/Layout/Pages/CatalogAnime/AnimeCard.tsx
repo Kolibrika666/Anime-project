@@ -2,13 +2,15 @@ import React from 'react';
 import s from './animeCard.module.scss'
 import { AnimeCardTypes } from '../../../api/catalogAnimeApi';
 import { NavLink } from 'react-router-dom';
-import { useAppDispatch, useAppSelector} from '../../../store';
+import { useAppDispatch} from '../../../store';
 import { SetAnimeCheck} from '../../../store/animeCatalog/animeCardSlice';
 import ButtonLikes from './ButtonLikes';
 
 export const raiting = (averageRating: string | number) => Math.floor(Number(averageRating)) / 10
 
 const AnimeCard = (props :AnimeCardTypes) => {
+
+    
     
 
     const dispatch = useAppDispatch()
