@@ -1,30 +1,35 @@
-# React + TypeScript + Vite
+# Аниме-сайт
+Pet project
+Сайт с Аниме: Главная страница, Каталог, добавление в избранное, Поиск по названию, Получение случайного аниме
+Frontend-разработка
+Основа работы: https://kitsu.io/api/edge/anime
+Документация: https://hummingbird-me.github.io/api-docs/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Содержание
+- [Технологии](#технологии)
+Шаблон Vite
+Получение данных по api и работа с ними
+Fronterd-React
+TS TSX
+Использование Layout для создания шаблона страницы
+Переключение страниц Route
+Смена стилей в зависимости от переменной
+Получение каталога по API с ограничением получения данных, бесконечный скролл, получение страницы при нажатии на выбранную картинку
+Добавление данных на страницу по клику
+Поиск по названию 
+Получение информации по случайному аниме
 
-Currently, two official plugins are available:
+## Технологии
+HTML, CSS, SCSS (SASS), JS, JSX, TS, TSX, Node JS
+React, React-router-dom, Redux Toolkit, React intersection observer
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Использование
+Необходимо установить HSASS, Node JS, React-router-dom, Redux Toolkit, React intersection observer
 
-## Expanding the ESLint configuration
+### Назначение
+Проект для вдохновения и использования в следующих проектах
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
